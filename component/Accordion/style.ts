@@ -7,16 +7,16 @@ export const Container = styled.div<ContainerProp>`
   width: 100%;
   position: relative;
   .transition-content{
-    &-entre{
+    &-enter{
       opacity: 0;
       margin: 0;
     }
-    &-entre-active{
+    &-enter-active{
       opacity: 1;
       margin: 0;
       transition: opacity .5s, margin .5s ;
     }
-    &-entre-done{
+    &-enter-done{
       opacity: 1;
       margin: 0;
     }
@@ -56,12 +56,13 @@ export const Title = styled.h3`
 `
 interface ContentProp {
   animationHeight: number;
-  status?: boolean;
+  status: boolean;
 }
 export const Content = styled.div<ContentProp>`
   position: relative;
-  padding: 10px;
-  //margin: $ { p =>  0 0 -$ {p.animationHeight}px 0 };
+  padding: ${ p => p.status ? '10px' : '0'};
+  margin: ${ p => p.status ? `0 0 -${p.animationHeight}px 0` : 0};
+  transition: margin .5s;
   &:before{
     content: ' ';
     position: absolute;
@@ -74,8 +75,7 @@ export const Content = styled.div<ContentProp>`
     background-color: #fff;
     z-index: -1;
   }
-  /* & > * {
-    opacity: $ { p => p.status ? 1 : 0};
-    transition: opacity 1s;
-  } */
+  & > * {
+    display: ${ p => p.status ? 'block' : 'none'};
+  }
 `
