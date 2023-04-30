@@ -11,6 +11,9 @@ export const ContainerRootLayout = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: row;
+  @media (max-width: 768px){
+    flex-direction: column;
+  }
 `
 export const TextHome = styled.h2`
   font-size: 25px;

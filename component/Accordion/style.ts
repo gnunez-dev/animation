@@ -79,3 +79,11 @@ export const Content = styled.div<ContentProp>`
     display: ${ p => p.status ? 'block' : 'none'};
   }
 `
+
+export const ContentSimple = styled.div<ContentProp>`
+  position: relative;
+  padding: ${ p => p.status ? '10px' : '0'};
+  display: ${ p => p.status ? 'block' : 'none'};
+  opacity: ${ p => p.status ? 1 : 0};
+  transition: opacity .5s, display .5s;
+`

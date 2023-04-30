@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Container = styled.header`
   width: 250px;
   padding: 10px;
-  background-color: #111111;
+  background-color: #373357;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   color: #ffffff;
   
@@ -18,10 +18,9 @@ export const Container = styled.header`
 export const Header = styled.h1`
   font-size: 18px;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 900;
   text-align: left;
   padding: 5px;
-  border-bottom: 1px solid;
 `
 export const Menu = styled.nav`
   display: flex;
@@ -33,6 +32,7 @@ export const MenuItem = styled(Link)`
   text-decoration: none;
   padding: 10px 0;
   &:hover{
-    font-style: italic
+    font-style: italic;
+    color: #ecc18d;
   }
 `
